@@ -3,6 +3,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   color: #eef5db;
+  /*width: 100%;*/
 }
 
 .main-container {
@@ -10,6 +11,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .header {
@@ -31,12 +33,6 @@ body {
   border-radius: 100%;
 }
 
-.nav-list {
-  display: flex;
-  flex-direction: column;
-  list-style-type: none;
-}
-
 li {
   margin-right: 20px;
 }
@@ -48,7 +44,9 @@ li {
 .welcome,
 .profile-container,
 .summary-container,
-.logout {
+.logout,
+.more,
+.big-calendar {
   display: none;
 }
 
@@ -59,13 +57,9 @@ li {
   width: 100%;
 }
 
-.mobile-nav-container {
-  display: flex;
-}
-
 .graph-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   background-color: #7a9e9f;
@@ -77,6 +71,7 @@ li {
   display: flex;
   justify-content: center;
   background-color: #eef5db;
+  /*height: 13vh;*/
 }
 
 .calorie-graph,
@@ -106,7 +101,6 @@ li {
 .cal-info p,
 .duration-info p {
   margin: 5px 0;
-
 }
 
 .cal-info,
@@ -132,6 +126,8 @@ li {
 .nav-list {
   display: flex;
   align-items: center;
+  list-style-type: none;
+  margin-bottom: 0;
 }
 
 .profile-pic {
@@ -144,6 +140,80 @@ li {
 .goal-details {
   font-weight: 300;
 }
-/*.bottom-nav {
-  flex-grow: 1;
-}*/
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (min-width: 400px) {
+  .calorie-graph,
+  .duration-graph {
+    height: 200px;
+    width: 200px;
+  }
+  .goal-details,
+  .duration-graph,
+  .calorie-graph,
+  .cal-info p,
+  .duration-info p,
+  .big-calendar p {
+    font-size: 24px;
+  }
+  .schedule-calendar {
+    width: 200px;
+  }
+  .graph-container {
+    height: 100%;
+  }
+  .more {
+    display: block;
+    padding: 20px 5px;
+  }
+  .mobile-nav-container {
+    display: none;
+  }
+  .big-calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .dashboard {
+    display: block;
+    border-bottom: 2px solid yellow;
+  }
+}
+
+@media screen and (min-width: 580px) {
+  .workouts {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .nutrition {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .calendar {
+    display: block;
+  }
+  .more {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 810px) {
+  .welcome {
+    display: block;
+  }
+  .name {
+    display: none;
+  }
+}
